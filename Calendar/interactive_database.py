@@ -2,7 +2,7 @@ from bottle import Bottle, request, template
 from peewee import MySQLDatabase, Model, PrimaryKeyField, CharField, DateTimeField, ForeignKeyField
 
 # Replace these values with your database connection details
-db = MySQLDatabase('interactive_calendar', user='Fred', password='@alpha@', host='localhost', port=3306)
+db = MySQLDatabase('interactive_calendar', user='root', password='@p@55ionFruit#', host='localhost', port=3306)
 
 class BaseModel(Model):
     class Meta:
@@ -64,4 +64,10 @@ def create_event():
 # Similar routes for updating and deleting events
 
 if __name__ == '__main__':
-    app.run(host='localhost', port=8080, debug=True)
+    #app.run(host='localhost', port=8080, debug=True)
+    test_setup_database()
+    test_get_items()
+    test_add_item()
+    test_delete_item()
+    test_update_item()
+    print("done.")
